@@ -9,7 +9,7 @@
 /*   Updated: 2024/03/30 20:21:34 by mgalecki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf_str(char *str)
 {
