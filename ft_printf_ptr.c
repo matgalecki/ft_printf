@@ -11,27 +11,20 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static int	ft_hex(unsigned long long int value)
+static int	ft_printf_char(unsigned long n)
 {
-	char	result[20];
-	char	*pref;
-	char	*rest;
-	int		len;
-	int		i;
-
-	pref = "0x";
-	rest = "0123456789abcdef";
-	i = sizeof(result) - 2;
-	if (value == 0)
-	{
-		result[i] = '\0';
-		i--;
-	}
-	while (result[i])
-	{
-	}
 }
 
-int	ft_printf_ptr(char *str)
+int	ft_printf_ptr(unsigned long ptr)
 {
+	unsigned long	n;
+
+	if (!ptr)
+	{
+		write(1, "(nil)", 5);
+		return (0);
+	}
+	n = (unsigned long)ptr;
+	write(1, "0x", 2);
+	return (2 + ft_printf_char(n));
 }
