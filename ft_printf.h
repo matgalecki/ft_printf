@@ -18,5 +18,6 @@
 
 int	ft_printf_char(int c);
 int	ft_printf_str(char *str);
+int	ft_printf_ptr(unsigned long ptr);
 
 #endif

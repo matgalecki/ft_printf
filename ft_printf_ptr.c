@@ -11,8 +11,26 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static int	ft_printf_char(unsigned long n)
+static int	ft_printf_chars(unsigned long n)
 {
+	char	a;
+	int		len;
+
+	len = 1;
+	if (n >= 16)
+	{
+		len = len + ft_printf_chars(n / 16);
+		ft_printf_chars(n % 16);
+	}
+	else
+	{
+		if (n < 10)
+			a = n + '0';
+		else
+			a = (n - 10) + 'a';
+		write (1, &a, 1);
+	}
+	return (len);
 }
 
 int	ft_printf_ptr(unsigned long ptr)
@@ -26,5 +44,12 @@ int	ft_printf_ptr(unsigned long ptr)
 	}
 	n = (unsigned long)ptr;
 	write(1, "0x", 2);
-	return (2 + ft_printf_char(n));
+	return (2 + ft_printf_chars(n));
 }
+/* 
+int main ()
+{
+	ft_printf_ptr(100);
+	return (0);
+}
+*/
