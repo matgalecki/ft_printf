@@ -40,7 +40,7 @@ int	ft_printf_ptr(unsigned long ptr)
 	if (!ptr)
 	{
 		write(1, "(nil)", 5);
-		return (0);
+		return (5);
 	}
 	n = (unsigned long)ptr;
 	write(1, "0x", 2);
