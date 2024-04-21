@@ -23,5 +23,6 @@ int	ft_printf_nbr(int n);
 int	ft_printf_un_nbr(unsigned int n);
 int	ft_printf_hex_low(unsigned int n);
 int	ft_printf_hex_upp(unsigned int n);
+int	ft_printf(const char *s, ...);
 
 #endif
