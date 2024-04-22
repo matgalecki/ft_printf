@@ -21,7 +21,7 @@ static int	ft_what_format(char c, va_list arg)
 	else if (c == 's')
 		len = len + ft_printf_str(va_arg(arg, char *));
 	else if (c == 'p')
-		len = len + ft_printf_ptr(va_arg(arg, unsigned long));
+		len = len + ft_printf_ptr((unsigned long)va_arg(arg, void *));
 	else if (c == 'd' || c == 'i')
 		len = len + ft_printf_nbr(va_arg(arg, int));
 	else if (c == 'u')
@@ -63,3 +63,19 @@ int	ft_printf(const char *s, ...)
 	va_end(arg);
 	return (len);
 }
+/* 
+int main ()
+{
+	ft_printf("%s, %d, %i\n", "asdasda", 11, -6);
+	ft_printf("%s, %d, %i\n", "rwererwe", 15, -19);
+	ft_printf("%s, %d, %i\n", "dfgdfgf", 16, -10);
+	ft_printf("%s, %d, %i\n", "afgfg", 17, -11);
+	ft_printf("%s, %d, %i\n", "asddfgdfgda", 18, -17);
+	ft_printf("%s, %d, %i\n", "asdaszxcda", 19, -18);
+	ft_printf("%s, %d, %i\n", "asdsdf", 10, -176);
+	ft_printf("%s, %d, %i\n", "asdasdsdfsda", 16, -1643);
+	ft_printf("%s, %d, %i\n", "asdazxcsda", 19, -1436);
+	ft_printf("%s, %d, %i\n", "asdassadsdda", 18, -1345);
+	return (0);
+}
+*/
